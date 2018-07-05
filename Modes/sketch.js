@@ -34,6 +34,7 @@ function draw() {
   
   if (mouseIsPressed) {
     mousey();
+    console.log("mouse");
   }
 
   for (let n = 0; n < balls.length; n++) {
