@@ -31,6 +31,10 @@ function setup() {
 
 function draw() {
   background(0);
+  
+  if (mouseIsPressed) {
+    mousey();
+  }
 
   for (let n = 0; n < balls.length; n++) {
     balls[n].angle = calcAngle(n);
