@@ -36,7 +36,7 @@ function draw() {
     balls[n].angle = calcAngle(n);
   }
   dy = balls[0].position.y - (height / 2);
-  theta0 = atan(dy / rowSep);
+  theta0 = dy / rowSep;
 
   f0 = T * (sin(balls[0].angle) - sin(theta0)); //T * (balls[0].angle - theta0);
   balls[0].addForce(unit.copy().mult(f0));
