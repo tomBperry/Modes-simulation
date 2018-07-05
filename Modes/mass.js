@@ -53,6 +53,7 @@ function mousey() {
     dy2 = dy2 * dy2;
     if (dx2 + dy2 < balls[i].radius * balls[i].radius) {
       balls.position.y = mouseY;
+      console.log("Ball: " + i + "is being dragged");
     }
   }
 }
