@@ -1,25 +1,24 @@
 let balls = [];
-let zero, unitx, unity;
-let k = [];
+let zero, unit;
 let Amp, energy;
 let rowSep, c;
 let Restoringforce;
 
-const radius = 0.2;
+const radius = 3;
 
-const T = 10;
+const T = 3000;
 const damping = 1;
 
-const N = 500; // 500 is the optimal number on the 29/06/18
+const N = 200; // 500 is the optimal number on the 29/06/18
 const M = 2; // Number of Modes
 
 function setup() {
-  createCanvas(766, 455);
+  createCanvas(1536, 770); //1536, 770
   colorMode(RGB, 255);
 
   rowSep = width / (N + 1);
   c = T / width;
-  const A = 0.5 * height / M;
+  const A = 0.5 * 770 / M;
 
   zero = createVector(0, 0);
   unit = createVector(0, 1);
@@ -30,6 +29,14 @@ function setup() {
 
     balls[n].minSep = rowSep;
     balls[n].maxSep = rowSep;
+
+    // if (n <= N / 2) {
+    //   balls[n].position.y = balls[n].position.y +
+    //     A * balls[n].position.x;
+    // } else {
+    //   balls[n].position.y = balls[n].position.y +
+    //     A * (width - balls[n].position.x);
+    // }
 
     for (let i = 0; i <= M; i++) {
       balls[n].position.y = balls[n].position.y +
